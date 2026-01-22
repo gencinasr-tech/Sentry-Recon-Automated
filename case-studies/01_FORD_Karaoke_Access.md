@@ -29,7 +29,15 @@ The URL pointed to a 'prelaunch' environment. Accessing it via a standard web br
 2.  Upon accepting the disclaimer, full access to the music dashboard was granted.
 3.  **Proof of Concept:** I was able to play full premium songs (copyrighted content) and generate "Passenger" QR codes.
 
----
+### 🖼️ Evidence / Evidencias
+
+**1. Access to Dashboard (No Auth required):**
+> *Screenshot showing the music player interface loaded without login.*
+![Dashboard](./dashboard.png)
+
+**2. Premium Content Playback:**
+> *Screenshot confirming playback of copyrighted songs.*
+![Player](./music-player.png)
 
 ## 📉 Resolution & Lessons Learned
 
