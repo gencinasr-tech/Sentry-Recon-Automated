@@ -1,0 +1,8 @@
+﻿# Secrets
+.env
+config/keys.txt
+config/telegram_token.txt
+**/*.log
+**/*.tmp
+.DS_Store
+Thumbs.db
