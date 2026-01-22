@@ -18,7 +18,7 @@ My automation script ('bb-check') flagged new subdomains and files in a public S
 \\\json
 {
   "id": "com.ford.wonka.stingraykaraoke",
-  "url": "https://karaoke-car-player-prod-ford-prelaunch.stingray.com",
+  "url": "https://karaoke-car-player-prod-ford-prelaunch.REDACTED.com",
   "category": "Audio"
 }
 \\\
