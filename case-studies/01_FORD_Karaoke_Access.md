@@ -15,13 +15,13 @@ During a routine automated reconnaissance session targeting Ford assets, I ident
 My automation script ('bb-check') flagged new subdomains and files in a public S3 Bucket ('wonka-dev'). Upon analyzing the exposed XML and JSON configuration files, I located a specific config file ('v2.6.json') listing vehicle application endpoints.
 
 **Key finding in JSON:**
-\\\json
+```json
 {
   "id": "com.ford.wonka.stingraykaraoke",
   "url": "https://karaoke-car-player-prod-ford-prelaunch.REDACTED.com",
   "category": "Audio"
 }
-\\\
+```
 
 ### 2. Exploitation (The Exploit)
 The URL pointed to a 'prelaunch' environment. Accessing it via a standard web browser revealed:
