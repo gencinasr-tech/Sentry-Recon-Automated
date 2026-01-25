@@ -54,10 +54,13 @@ curl "[https://api.staging](https://api.staging).[TARGET].com/services/rest/?met
 **1. API Method Reflection:**
 
 > *Screenshot showing `flickr.reflection.getMethods` exposing internal administrative methods on the staging environment.*
+![API Method Reflection](./API Method Reflection.png)
 
 **2. PII Leak Proof of Concept:**
 
 > *Screenshot confirming the resolution of a private email address to a specific User ID (Sensitive data redacted).*
+> !PII Leak Proof of Concept](./PII Leak Proof of Concept.png)
+
 
 ## 📉 Resolution & Lessons Learned
 
