@@ -30,16 +30,13 @@ Sending a test request to Staging with the Production key resulted in a successf
 Leveraging the reflection methods, the API disclosed a comprehensive list of available commands, including administrative methods that are typically restricted or hidden in production environments.
 
 
-![API Reflection Proof](images/api_reflection_redacted.png)
-*(Fig 1. List of exposed internal methods)*
-
 ### 4. Impact: User Enumeration / PII Leak
 I demonstrated that it was possible to resolve private email addresses to public profiles and internal User IDs using specific API methods on the staging server.
 
 **Proof of Concept (Redacted):**
 ```bash
 curl "[https://api.staging](https://api.staging).[TARGET].com/services/rest/?method=flickr.people.findByEmail&api_key=[REDACTED_PROD_KEY]&find_email=[TARGET_EMAIL]&format=json&nojsoncallback=1"
-
+```
 
 {
   "user": {
@@ -49,3 +46,23 @@ curl "[https://api.staging](https://api.staging).[TARGET].com/services/rest/?met
   },
   "stat": "ok"
 }
+
+---
+
+### 🖼️ Evidence / Evidencias
+
+**1. API Method Reflection:**
+
+> *Screenshot showing `flickr.reflection.getMethods` exposing internal administrative methods on the staging environment.*
+
+**2. PII Leak Proof of Concept:**
+
+> *Screenshot confirming the resolution of a private email address to a specific User ID (Sensitive data redacted).*
+
+## 📉 Resolution & Lessons Learned
+
+**Reported to:** Flickr Bug Bounty (HackerOne)
+**Status:** Closed as *Informative* (Risk accepted / Low impact according to vendor).
+
+**🎓 Pentester's Takeaway:**
+This case highlights the importance of **Environment Isolation**. Development and Staging environments are often the "soft underbelly" of an organization. Even if Production is secure, a Staging endpoint reusing Production credentials (API Keys) can become a valid vector for Information Disclosure and User Enumeration. Always check if keys from the main site open doors in subdomains.
